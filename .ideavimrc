@@ -1,0 +1,86 @@
+" Use space as leader(default is '\')
+let mapleader=" "
+
+" Basic Settings
+" Fixed the problem that p paste cannot import class automatically, https://youtrack.jetbrains.com/issue/VIM-25/VIM-code-paste-should-be-smarter
+set clipboard+=ideaput,unnamed
+" Keep the number of rows
+set scrolloff=5
+" Enable relative number
+set relativenumber
+" Disable relative number
+"set norelativenumber
+" Show line number
+set number
+" Ignore case when search
+set ignorecase
+" Enable smart case when search
+set smartcase
+
+inoremap jj <esc>
+
+" Closing tabs
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+
+
+nmap <leader>i :action GotoImplementation<cr>
+
+" Keybinding
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
+" Go to start of the line
+noremap <C-h> ^
+" Go to end of the line
+noremap <C-l> $
+
+" Move quickly
+noremap <C-j> 3j
+noremap <C-k> 3k
+
+" Split
+nmap <leader>wv :action SplitVertically<cr>
+nmap <leader>wc :action Unsplit<cr>
+
+" Jump between splits
+map <LEADER>h <C-w>h
+map <LEADER>l <C-w>l
+
+" Tab switch
+nnoremap E gT
+nnoremap R gt
+nnoremap W 1gt
+" nnoremap T $gt
+nnoremap T 1gtgT
+
+" Select to the line end
+noremap v<C-l> v$h
+noremap v<C-h> v^
+
+" select all
+noremap vie ggVG
+
+" Plugins
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
+
+" vim-multiple-cursors
+set multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+map \r <Action>(Run)
+map <leader>r <Action>(RenameElement)
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
