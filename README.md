@@ -24,8 +24,14 @@ Here are the main components and their respective configuration files:
 
 - **Rofi:** A window switcher, application launcher and dmenu replacement. The configuration file can be found in `.config/rofi/config`.
 
-## Installation
 
-To use these configurations, clone this repository and copy the configuration files to their respective locations in your home directory.
+## Visual Tour
 
-Please note that these configurations are tailored to my personal preferences and may not suit your needs out of the box. Feel free to modify them as you see fit.
+![Screenshot 1](./imgs/main.png)
+![Screenshot 2](./imgs/s.png)
+![Screenshot 3](./imgs/th.png)
+
+
+## Acknowledgements
+
+A big shout-out to the unsung heroes of the internet, those generous souls who left their dotfiles and configs out in the open. Your digital fingerprints are all over my setup. Thanks for leaving your windows open; I've borrowed a few things. 😉
