@@ -34,4 +34,4 @@ Here are the main components and their respective configuration files:
 
 ## Acknowledgements
 
-A big shout-out to the unsung heroes of the internet, those generous souls who left their dotfiles and configs out in the open. Your digital fingerprints are all over my setup. Thanks for leaving your windows open; I've borrowed a few things. 😉
+A big shout-out to the unsung heroes of the internet, those generous souls who left their dotfiles and configs out in the open. Your digital fingerprints are all over my setup. Thanks for leaving your windows open; I've borrowed a few things😉
