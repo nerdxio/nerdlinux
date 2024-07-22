@@ -1,391 +1,45 @@
-live_config_reload = true
-
-[bell]
-animation = "EaseOutExpo"
-color = "0xffffff"
-duration = 0
-
-[colors]
-draw_bold_text_with_bright_colors = false
-
-[[colors.indexed_colors]]
-color = "0xF8BD96"
-index = 16
-
-[[colors.indexed_colors]]
-color = "0xF5E0DC"
-index = 17
-
-[colors.bright]
-black = "0x988BA2"
-blue = "0x96CDFB"
-cyan = "0x89DCEB"
-green = "0xABE9B3"
-magenta = "0xF5C2E7"
-red = "0xF28FAD"
-white = "0xD9E0EE"
-yellow = "0xFAE3B0"
-
-[colors.cursor]
-cursor = "0x89DCEB"
-text = "0x1E1D2F"
-
-[colors.normal]
-black = "0x6E6C7E"
-blue = "0x96CDFB"
-cyan = "0x89DCEB"
-green = "0xABE9B3"
-magenta = "0xF5C2E7"
-red = "0xF28FAD"
-white = "0xD9E0EE"
-yellow = "0xFAE3B0"
-
-[colors.primary]
-background = "0x1E1D2F"
-foreground = "0xD9E0EE"
-
-[cursor]
-style = "Block"
-unfocused_hollow = true
+import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]
 
 [debug]
-log_level = "OFF"
-persistent_logging = false
-print_events = false
-render_timer = false
+log_level = "Off"
+
+[env]
+LANG = "en_US.UTF-8"
+LC_CTYPE = "en_US.UTF-8"
+TERM = "alacritty"
 
 [font]
-size = 12.0
+size = 15
 
-[font.glyph_offset]
-x = 0
-y = 0
+[font.bold]
+family = "JetBrainsMonoNL NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMonoNL NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMonoNL NF"
+style = "Italic"
 
 [font.normal]
-family = "JetBrains Mono Nerd Font"
-style = "Medium"
-
-[font.offset]
-x = 0
-y = 0
+family = "JetBrainsMonoNL NF"
+style = "Regular"
 
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"
-mods = "Command"
+mods = "Shift|Control"
 
 [[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "Quit"
-key = "Q"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "SpawnNewInstance"
-key = "N"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "Return"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u001BOH"
-key = "Home"
-mode = "AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001B[H"
-key = "Home"
-mode = "~AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001BOF"
-key = "End"
-mode = "AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001B[F"
-key = "End"
-mode = "~AppCursor"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Minus"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[5;2~"
-key = "PageUp"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[5;5~"
-key = "PageUp"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[5~"
-key = "PageUp"
-
-[[keyboard.bindings]]
-chars = "\u001B[6;2~"
-key = "PageDown"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[6;5~"
-key = "PageDown"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[6~"
-key = "PageDown"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;2D"
-key = "Left"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;5D"
-key = "Left"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;3D"
-key = "Left"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B[D"
-key = "Left"
-mode = "~AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001BOD"
-key = "Left"
-mode = "AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;2C"
-key = "Right"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;5C"
-key = "Right"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;3C"
-key = "Right"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B[C"
-key = "Right"
-mode = "~AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001BOC"
-key = "Right"
-mode = "AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;2A"
-key = "Up"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;5A"
-key = "Up"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;3A"
-key = "Up"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B[A"
-key = "Up"
-mode = "~AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001BOA"
-key = "Up"
-mode = "AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;2B"
-key = "Down"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;5B"
-key = "Down"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;3B"
-key = "Down"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B[B"
-key = "Down"
-mode = "~AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001BOB"
-key = "Down"
-mode = "AppCursor"
-
-[[keyboard.bindings]]
-chars = "\u001B[Z"
-key = "Tab"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001BOP"
-key = "F1"
-
-[[keyboard.bindings]]
-chars = "\u001BOQ"
-key = "F2"
-
-[[keyboard.bindings]]
-chars = "\u001BOR"
-key = "F3"
-
-[[keyboard.bindings]]
-chars = "\u001BOS"
-key = "F4"
-
-[[keyboard.bindings]]
-chars = "\u001B[15~"
-key = "F5"
-
-[[keyboard.bindings]]
-chars = "\u001B[17~"
-key = "F6"
-
-[[keyboard.bindings]]
-chars = "\u001B[18~"
-key = "F7"
-
-[[keyboard.bindings]]
-chars = "\u001B[19~"
-key = "F8"
-
-[[keyboard.bindings]]
-chars = "\u001B[20~"
-key = "F9"
-
-[[keyboard.bindings]]
-chars = "\u001B[21~"
-key = "F10"
-
-[[keyboard.bindings]]
-chars = "\u001B[23~"
-key = "F11"
-
-[[keyboard.bindings]]
-chars = "\u001B[24~"
-key = "F12"
-
-[[keyboard.bindings]]
-chars = "\u007F"
-key = "Back"
-
-[[keyboard.bindings]]
-chars = "\u001B\u007F"
-key = "Back"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B[2~"
-key = "Insert"
-
-[[keyboard.bindings]]
-chars = "\u001B[3~"
-key = "Delete"
-
-[[keyboard.bindings]]
-chars = "\u0002&"
-key = "W"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002c"
-key = "T"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002n"
-key = "RBracket"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002p"
-key = "LBracket"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002o"
-key = "RBracket"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002;"
-key = "LBracket"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002/"
-key = "F"
-mods = "Command"
-
-[mouse]
-hide_when_typing = true
-
-[[mouse.bindings]]
-action = "PasteSelection"
-mouse = "Middle"
-
-
-[scrolling]
-history = 38
-multiplier = 3
-
-[selection]
-save_to_clipboard = false
-semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+action = "None"
+key = "Space"
+mode = "~Search"
+mods = "Shift|Control"
+
+[shell]
+program = "/bin/zsh"
 
 [window]
-dynamic_padding = false
-startup_mode = "Windowed"
-
-[window.dimensions]
-columns = 100
-lines = 85
-
-[window.padding]
-x = 3
-y = 3
+opacity = 1.0
