@@ -1,76 +1,74 @@
 {
-    "output": "eDP-1",
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "height": 32,
     "spacing": 4,
     "exclusive": true,
     "gtk-layer-shell": true,
     "passthrough": false,
     "fixed-center": true,
-
-    "modules-left": [
-        "custom/logo",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
+    "modules-left": ["custom/logo","hyprland/workspaces"],
+    "modules-center": ["clock#simpleclock"],
     "modules-right": [
-        "tray",
-        "memory",
-        "network",
-        "pulseaudio",
-        "battery",
-        "custom/power"
+      "cpu",
+      "memory",
+      "pulseaudio",
+      "custom/effects",
+      "clock",
+      "tray",
+      "battery",
+      "custom/power",
     ],
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "on-click-right": "fullscreen",
-        "icon-theme": "WhiteSur",
-        "icon-size": 25,
-        "tooltip-format": "{title}"
+    "custom/spotify": {
+      "format": "{}",
+      "return-type": "json",
+      "on-click": "playerctl -p spotify play-pause",
+      "on-click-right": "spotifatius toggle-liked",
+      "on-click-middle": "playerctl -p spotify next",
+      "exec": "spotifatius monitor",
     },
-    "hyprland/workspaces": {
-        "on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "default": "",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "active": "󱓻",
-            "urgent": "󱓻"
-        },
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-        }
-    },
-    "memory": {
-        "interval": 5,
-        "format": "󰍛 {}%",
-        "max-length": 10
+    "wlr/workspaces": {
+      "on-click": "activate",
+      "format": "{name}",
+      "all-outputs": true,
+      "disable-scroll": false,
+      "active-only": false,
     },
     "tray": {
-        "spacing": 10
+      "show-passive-items": true,
+      "spacing": 10,
+    },
+    "clock#simpleclock": {
+      "tooltip": false,
+      "format": "  {:%I:%M %p}"
     },
     "clock": {
-        "tooltip-format": "{calendar}",
-        "format-alt": "  {:%a, %d %b %Y}",
-        "format": "  {:%I:%M %p}"
+      "format": "  {:L%a %d %b}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
-    "network": {
+    "cpu": {
+      "format": "  {usage}%",
+      "tooltip": true,
+      "interval": 1,
+    },
+    "memory": {
+      "format": " {used:0.2f}G",
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": "  muted",
+      "format-icons": {
+        "headphone": " ",
+        "hands-free": "󰂑",
+        "headset": "󰂑",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": [" ", " ", " "],
+      },
+      "on-click": "pavucontrol",
+    },
+        "network": {
         "format-wifi" : "{icon}",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format-ethernet": "󰀂",
@@ -84,25 +82,26 @@
 	"interval": 5,
 	"nospacing": 1,
     },
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-bluetooth": "󰂰",
-        "nospacing": 1,
-        "tooltip-format": "Volume : {volume}%",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "",
-            "default": ["󰖀","󰕾",""]
-        },
-        "on-click": "pamixer -t",
-        "scroll-step": 1
-    },
     "custom/logo": {
-        "format": "  ",
-        "tooltip": false,
-        "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
+      "format": " ",
+      "tooltip": false,
+      "on-click": "rofi -show drun"
     },
-    "battery": {
+    "custom/sep": {
+      "format": "|",
+      "tooltip": false,
+    },
+    "custom/power": {
+      "tooltip": false,
+      "on-click": "wlogout -p layer-shell &",
+      "format": "⏻ ",
+    },
+    "custom/effects": {
+      "tooltip": false,
+      "on-click": "easyeffects",
+      "format": "󱌈",
+    },
+     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": {
             "charging": [
@@ -137,5 +136,30 @@
             "critical": 10
         },
         "tooltip": false
-    }
-}
+    },
+        "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": " 󱓻 ",
+            "urgent": " 󱓻 "
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+  }
